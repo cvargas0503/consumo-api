@@ -1,6 +1,6 @@
 # MUSA
 
-Galería de obras de dominio público del Art Institute of Chicago. Permite buscar por obra o artista, filtrar por técnica, consultar fichas y guardar favoritos en el navegador.
+Galería de obras de dominio público del Cleveland Museum of Art. Permite buscar por obra o artista, filtrar por tipo, consultar fichas y guardar favoritos en el navegador.
 
 ## Ejecutar
 
@@ -37,13 +37,13 @@ assets/
 
 ## Datos y comportamiento
 
-Se consulta la [API del Art Institute of Chicago](https://api.artic.edu/docs/):
+Se consulta la [API del Cleveland Museum of Art](https://openaccess-api.clevelandart.org/):
 
-- `GET /api/v1/artworks/search`: búsqueda y filtros, con nueve resultados por página.
-- `GET /api/v1/artworks/{id}`: ficha de una obra.
-- Imágenes IIIF: se construyen a partir de `config.iiif_url` e `image_id`.
+- `GET /api/artworks/`: búsqueda y filtros, con nueve resultados por página.
+- `GET /api/artworks/{id}`: ficha de una obra.
+- Imágenes: se utilizan las URLs oficiales incluidas en `images.web.url`.
 
-Las consultas de colección filtran `is_public_domain` y la existencia de una imagen. Los títulos y las fichas conservan el idioma del catálogo original.
+Las consultas de colección usan `cc0=1` y `has_image=1`. La búsqueda se envía mediante `q`, el filtro mediante `type` y la paginación mediante `limit` y `skip`. Los títulos y las fichas conservan el idioma del catálogo original.
 
 La búsqueda utiliza `fetch` con `async/await`; la consulta individual utiliza una cadena de promesas. Se verifican los estados HTTP y se gestionan tiempos de espera, cancelación, respuestas inválidas y errores de conexión. Al cambiar de búsqueda se cancela la petición anterior.
 
