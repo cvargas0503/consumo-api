@@ -41,7 +41,16 @@
 
       <form id="search-form" class="search-form" role="search">
         <div class="search-field"><label for="search-input">Obra o artista</label><div class="search-input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search-input" type="search" placeholder="Prueba con Monet, un paisaje…" maxlength="100" autocomplete="off"></div></div>
-        <div class="filter-field"><label for="type-select">Tipo de obra</label><select id="type-select"><option value="">Todas las técnicas</option value="Painting">Pintura</option><option value="Print">Grabado</option><option value="Drawing">Dibujo</option><option value="Sculpture">Escultura</option></select></div>
+        <div class="filter-field">
+          <label for="type-select">Tipo de obra</label>
+          <select id="type-select">
+            <option value="">Todos los tipos</option>
+            <option value="Painting">Pintura</option>
+            <option value="Print">Grabado</option>
+            <option value="Drawing">Dibujo</option>
+            <option value="Sculpture">Escultura</option>
+          </select>
+        </div>
         <button type="submit" class="button dark" id="search-button">Buscar <span aria-hidden="true">↗</span></button>
       </form>
 
