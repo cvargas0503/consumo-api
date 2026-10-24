@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3eb">
+  <meta name="description" content="Explora obras de dominio público, descubre artistas y crea tu propia colección de favoritos con MUSA.">
+  <title>MUSA — Una ventana al arte</title>
+  <link rel="icon" type="image/svg+xml" href="assets/placeholder.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#coleccion">Saltar a la colección</a>
+  <header class="site-header container">
+    <a class="brand" href="./" aria-label="MUSA, inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 27V15a12 12 0 0 1 24 0v12M10 27V15a6 6 0 0 1 12 0v12M16 27V14"/></svg>MUSA<span class="brand-subtitle">ARTE SIN FRONTERAS</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#coleccion" id="explore-link" aria-current="page">Explorar</a>
+      <a href="#coleccion" id="favorites-link">Mis favoritas <span id="favorites-count" class="count">0</span></a>
+      <a href="#acerca">Acerca de MUSA <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-line"></span> UNA COLECCIÓN, INFINITAS MIRADAS</p>
+        <h1 id="hero-title">Una ventana<br>al <em>arte.</em></h1>
+        <p class="hero-description">Descubre obras que atraviesan el tiempo.<br>Encuentra una que hable contigo.</p>
+        <a class="button dark" href="#coleccion">Explorar la colección <span aria-hidden="true">↘</span></a>
+        <div class="hero-note"><span class="note-symbol" aria-hidden="true">✳</span><p>Arte abierto para todos.<br><strong>Tu próxima inspiración está aquí.</strong></p></div>
+      </div>
+      <figure class="hero-art">
+        <div class="hero-frame"><img id="featured-image" src="assets/placeholder.svg" width="843" height="650" alt="" fetchpriority="high"><span class="art-stamp">LA MIRADA<br>DEL DÍA <span aria-hidden="true">↗</span></span></div>
+        <figcaption><div><span id="featured-title">Cargando obra destacada…</span><small id="featured-artist">Art Institute of Chicago</small></div><span class="figure-index">01 / MUSA</span></figcaption>
+      </figure>
+    </section>
+
+    <section id="coleccion" class="collection container" aria-labelledby="collection-title">
+      <div class="section-heading"><div><p class="eyebrow">EL ARTE DE DESCUBRIR</p><h2 id="collection-title">Encuentra tu próxima inspiración<span>.</span></h2></div><span class="collection-note">Colección de dominio público</span></div>
+
+      <form id="search-form" class="search-form" role="search">
+        <div class="search-field"><label for="search-input">Obra o artista</label><div class="search-input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search-input" type="search" placeholder="Prueba con Monet, un paisaje…" maxlength="100" autocomplete="off"></div></div>
+        <div class="filter-field"><label for="type-select">Tipo de obra</label><select id="type-select"><option value="">Todas las técnicas</option value="Painting">Pintura</option><option value="Print">Grabado</option><option value="Drawing">Dibujo</option><option value="Sculpture">Escultura</option></select></div>
+        <button type="submit" class="button dark" id="search-button">Buscar <span aria-hidden="true">↗</span></button>
+      </form>
+
+      <div class="suggestions"><span>Un punto de partida</span><button type="button" data-query="Monet">Claude Monet</button><button type="button" data-query="Van Gogh">Vincent van Gogh</button><button type="button" data-query="Hokusai">Katsushika Hokusai</button><button type="button" id="clear-search">Ver todo <span aria-hidden="true">↗</span></button></div>
+
+      <div class="results-heading"><p id="results-summary" role="status" aria-live="polite">Preparando la colección…</p><span id="view-label">EXPLORAR / COLECCIÓN</span></div>
+      <p id="storage-notice" class="notice" role="status" hidden></p>
+      <div id="feedback" class="feedback" hidden><p class="eyebrow" id="feedback-label"></p><h3 id="feedback-title"></h3><p id="feedback-text"></p><button class="button dark" id="feedback-action" type="button">Reintentar</button></div>
+      <div id="art-grid" class="art-grid" aria-busy="true" aria-label="Obras de la colección"></div>
+      <div class="pagination" id="pagination" hidden><button class="button outline" id="previous-page" type="button">← Anterior</button><p id="page-label"></p><button class="button outline" id="next-page" type="button">Siguiente →</button></div>
+      <noscript><p>Activa JavaScript en tu navegador para consultar las obras y utilizar la búsqueda.</p></noscript>
+    </section>
+
+    <section id="acerca" class="about"><div class="container about-inner"><div><p class="eyebrow">EL ARTE NOS PERTENECE</p><h2>Una colección abierta.<br>Una mirada propia.</h2></div><div><p>MUSA te invita a explorar obras de dominio público de la colección del Art Institute of Chicago. Busca, detente en los detalles y guarda las piezas que quieras volver a mirar.</p><p class="muted">Los títulos y la información de las obras conservan el idioma del catálogo del museo.</p><a href="https://www.artic.edu/collection" target="_blank" rel="noopener noreferrer">Conoce la colección del museo <span aria-hidden="true">↗</span></a></div></div></section>
+  </main>
+
+  <footer class="site-footer container"><a class="footer-brand" href="./">MUSA</a><p>Una ventana al arte.</p><a href="https://api.artic.edu/docs/" target="_blank" rel="noopener noreferrer">Datos e imágenes · Art Institute of Chicago ↗</a></footer>
+
+  <dialog id="art-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-toolbar"><span class="eyebrow">UNA OBRA, OTRA MIRADA</span><button type="button" id="close-dialog" class="icon-button" aria-label="Cerrar ficha">×</button></div>
+    <div id="dialog-content" aria-live="polite"></div>
+  </dialog>
+</body>
+</html>
